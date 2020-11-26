@@ -1,0 +1,42 @@
+Index: mysql-8.0-8.0.19/storage/innobase/innodb.cmake
+===================================================================
+--- mysql-8.0-8.0.19.orig/storage/innobase/innodb.cmake
++++ mysql-8.0-8.0.19/storage/innobase/innodb.cmake
+@@ -162,9 +162,9 @@ IF(NOT CMAKE_CROSSCOMPILING)
+   "#include<stdint.h>
+   int main()
+   {
+-    unsigned char	a = 0;
+-    unsigned char	b = 0;
+-    unsigned char	c = 1;
++    unsigned int	a = 0;
++    unsigned int	b = 0;
++    unsigned int	c = 1;
+ 
+     __atomic_exchange(&a, &b,  &c, __ATOMIC_RELEASE);
+     __atomic_compare_exchange(&a, &b, &c, 0,
+Index: mysql-8.0-8.0.19/CMakeLists.txt
+===================================================================
+--- mysql-8.0-8.0.19.orig/CMakeLists.txt
++++ mysql-8.0-8.0.19/CMakeLists.txt
+@@ -826,6 +826,20 @@ IF(LINUX_FEDORA_28 OR LINUX_UBUNTU_16_04
+   ENDIF()
+ ENDIF()
+ 
++# riscv64 needs -latomic for std::atomic<bool>, as RISC-V doesn't provide byte
++# atomics. But because of --as-needed and because I don't know how to use
++# cmake, let's use -pthread instead.
++CHECK_C_SOURCE_COMPILES(
++"#ifndef __riscv
++#error Not RISC-V
++#endif
++int main() {}"
++IS_RISCV
++)
++IF(IS_RISCV)
++  STRING_APPEND(CMAKE_CXX_LINK_FLAGS " -pthread")
++ENDIF()
++
+ IF(LINK_RANDOMIZE)
+   STRING_APPEND(CMAKE_C_FLAGS   " -ffunction-sections -fdata-sections")
+   STRING_APPEND(CMAKE_CXX_FLAGS " -ffunction-sections -fdata-sections")
