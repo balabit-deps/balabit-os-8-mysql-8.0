@@ -8,6 +8,7 @@ libmysqlclient.so.21 libmysqlclient21 #MINVER#
  mysql_autocommit@libmysqlclient_21.0 8.0.11
  mysql_change_user@libmysqlclient_21.0 8.0.11
  mysql_character_set_name@libmysqlclient_21.0 8.0.11
+ mysql_bind_param@libmysqlclient_21.0 8.0.23
  mysql_client_find_plugin@libmysqlclient_21.0 8.0.11
  mysql_client_register_plugin@libmysqlclient_21.0 8.0.11
  mysql_close@libmysqlclient_21.0 8.0.11

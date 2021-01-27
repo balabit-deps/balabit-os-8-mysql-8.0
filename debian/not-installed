@@ -8,4 +8,3 @@ usr/lib/mysql-router/libmysqlrouter_http.so
 usr/lib/mysql-router/libmysqlharness.so
 usr/lib/mysql-router/libmysqlrouter.so
 usr/lib/mysql/plugin/component_test_mysql_current_thread_reader.so
-etc/logrotate.d/mysqlrouter

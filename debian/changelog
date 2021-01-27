@@ -1,3 +1,21 @@
+mysql-8.0 (8.0.23-0ubuntu0.20.04.1) focal-security; urgency=medium
+
+  * SECURITY UPDATE: Update to 8.0.23 to fix security issues
+    - CVE-2021-2002, CVE-2021-2010, CVE-2021-2011, CVE-2021-2021,
+      CVE-2021-2022, CVE-2021-2024, CVE-2021-2031, CVE-2021-2032,
+      CVE-2021-2036, CVE-2021-2038, CVE-2021-2046, CVE-2021-2048,
+      CVE-2021-2056, CVE-2021-2058, CVE-2021-2060, CVE-2021-2061,
+      CVE-2021-2065, CVE-2021-2070, CVE-2021-2072, CVE-2021-2076,
+      CVE-2021-2081, CVE-2021-2087, CVE-2021-2088, CVE-2021-2122
+  * debian/patches/atomic-test-words.patch: updated.
+  * debian/patches/fix_test_year.patch: fix test with hardcoded date.
+  * debian/libmysqlclient21.symbols: added new symbol.
+  * debian/mysql-router.install: remove mysql_protocol.so, it has been
+    removed from the new version.
+  * debian/*.install: added some new files shipped in the new version.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 27 Jan 2021 09:25:29 -0500
+
 mysql-8.0 (8.0.22-0ubuntu0.20.04.3) focal-security; urgency=medium
 
   * SECURITY UPDATE: restrict open mysqlx port (LP: #1857584)

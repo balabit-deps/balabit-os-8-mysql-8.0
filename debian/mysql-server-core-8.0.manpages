@@ -9,8 +9,8 @@ debian/tmp/usr/share/man/man1/mysql_ssl_rsa_setup.1
 debian/tmp/usr/share/man/man1/mysql_tzinfo_to_sql.1
 debian/tmp/usr/share/man/man1/mysql_upgrade.1
 debian/tmp/usr/share/man/man1/mysqlbinlog.1
-debian/tmp/usr/share/man/man8/mysqld.8
 debian/tmp/usr/share/man/man1/mysqld_multi.1
 debian/tmp/usr/share/man/man1/mysqld_safe.1
 debian/tmp/usr/share/man/man1/perror.1
 debian/tmp/usr/share/man/man1/zlib_decompress.1
+debian/tmp/usr/share/man/man8/mysqld.8

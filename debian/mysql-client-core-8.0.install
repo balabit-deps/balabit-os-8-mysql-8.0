@@ -1,8 +1,8 @@
-usr/bin/mysql
-usr/bin/mysqlcheck
 usr/bin/myisam_ftdump
+usr/bin/mysql
 usr/bin/mysql_config_editor
 usr/bin/mysqladmin
+usr/bin/mysqlcheck
 usr/bin/mysqldump
 usr/bin/mysqldumpslow
 usr/bin/mysqlimport
