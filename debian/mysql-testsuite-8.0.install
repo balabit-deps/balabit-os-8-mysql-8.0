@@ -1,5 +1,6 @@
 usr/bin/comp_err usr/lib/mysql-test/bin/
 usr/bin/mysql_client_test usr/lib/mysql-test/bin/
+usr/bin/mysql_keyring_encryption_test usr/lib/mysql-test/bin/
 usr/bin/mysqltest usr/lib/mysql-test/bin/
 usr/bin/mysqltest_safe_process usr/lib/mysql-test/bin/
 usr/bin/mysqlxtest usr/lib/mysql-test/bin/
