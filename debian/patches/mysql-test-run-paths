@@ -7,7 +7,7 @@ Last-Update: 2018-11-02
 
 --- a/mysql-test/mysql-test-run.pl
 +++ b/mysql-test/mysql-test-run.pl
-@@ -2794,7 +2794,8 @@ sub environment_setup {
+@@ -3250,7 +3250,8 @@ sub environment_setup {
  
    # zlib_decompress
    my $exe_zlib_decompress =

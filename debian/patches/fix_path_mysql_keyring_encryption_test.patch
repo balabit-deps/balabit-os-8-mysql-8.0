@@ -1,0 +1,16 @@
+Description: fix location of mysql_keyring_encryption_test binary
+Author: Marc Deslauriers <marc.deslauriers@canonical.com>
+
+--- a/mysql-test/mysql-test-run.pl
++++ b/mysql-test/mysql-test-run.pl
+@@ -2611,9 +2611,7 @@ sub executable_setup () {
+   $exe_mysql_migrate_keyring =
+     mtr_exe_exists("$path_client_bindir/mysql_migrate_keyring");
+   $exe_mysql_keyring_encryption_test =
+-    my_find_bin($bindir,
+-                [ "runtime_output_directory", "libexec", "sbin", "bin" ],
+-                "mysql_keyring_encryption_test");
++    mtr_exe_exists("$path_client_bindir/mysql_keyring_encryption_test");
+ 
+   if ($ndbcluster_enabled) {
+     # Look for single threaded NDB

@@ -5,6 +5,7 @@ usr/bin/myisamchk usr/lib/mysql-test/bin/myisamchk
 usr/bin/myisampack usr/lib/mysql-test/bin/myisampack
 usr/bin/mysql usr/lib/mysql-test/bin/mysql
 usr/bin/mysql_config_editor usr/lib/mysql-test/bin/mysql_config_editor
+usr/bin/mysql_migrate_keyring usr/lib/mysql-test/bin/mysql_migrate_keyring
 usr/bin/mysql_ssl_rsa_setup usr/lib/mysql-test/bin/mysql_ssl_rsa_setup
 usr/bin/mysql_tzinfo_to_sql usr/lib/mysql-test/bin/mysql_tzinfo_to_sql
 usr/bin/mysql_upgrade usr/lib/mysql-test/bin/mysql_upgrade

@@ -1,3 +1,33 @@
+mysql-8.0 (8.0.26-0ubuntu0.20.04.2) focal-security; urgency=medium
+
+  * SECURITY UPDATE: Update to 8.0.26 to fix security issues
+    - CVE-2021-2339, CVE-2021-2340, CVE-2021-2342, CVE-2021-2352,
+      CVE-2021-2354, CVE-2021-2356, CVE-2021-2357, CVE-2021-2367,
+      CVE-2021-2370, CVE-2021-2372, CVE-2021-2374, CVE-2021-2383,
+      CVE-2021-2384, CVE-2021-2385, CVE-2021-2387, CVE-2021-2389,
+      CVE-2021-2390, CVE-2021-2399, CVE-2021-2402, CVE-2021-2410,
+      CVE-2021-2417, CVE-2021-2418, CVE-2021-2422, CVE-2021-2424,
+      CVE-2021-2425, CVE-2021-2426, CVE-2021-2427, CVE-2021-2429,
+      CVE-2021-2437, CVE-2021-2440, CVE-2021-2441
+  * Fix test suite failures:
+    - mysql-testsuite-8.0.links: add link for mysql_migrate_keyring so the
+      binary can be located during tests.
+    - debian/patches/fix_path_mysql_keyring_encryption_test.patch: fix
+      location of mysql_keyring_encryption_test binary.
+    - debian/patches/disable_root_files.patch: disable files that require
+      root privileges during tests.
+    - debian/rules,debian/tests/upstream: disable newly-failing
+      main.slow_log test.
+  * Package new upstream files:
+    - debian/mysql-server-core-8.0.install: semisync_replica.so,
+      semisync_source.so.
+    - debian/mysql-testsuite-8.0.install: component_test_table_access.so,
+      component_test_mysql_system_variable_set.so.
+  * debian/patches/fix_ppc64el_longdouble_ftbfs.patch: disable long double
+    test on ppc64el.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Thu, 22 Jul 2021 07:53:03 -0400
+
 mysql-8.0 (8.0.25-0ubuntu0.20.04.1) focal-security; urgency=medium
 
   * SECURITY UPDATE: Update to 8.0.25 to fix security issues

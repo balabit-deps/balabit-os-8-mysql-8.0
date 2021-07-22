@@ -20,6 +20,7 @@ usr/lib/mysql/plugin/component_test_backup_lock_service.so
 usr/lib/mysql/plugin/component_test_component_deinit.so
 usr/lib/mysql/plugin/component_test_host_application_signal.so
 usr/lib/mysql/plugin/component_test_mysql_runtime_error.so
+usr/lib/mysql/plugin/component_test_mysql_system_variable_set.so
 usr/lib/mysql/plugin/component_test_pfs_notification.so
 usr/lib/mysql/plugin/component_test_pfs_resource_group.so
 usr/lib/mysql/plugin/component_test_status_var_service.so
@@ -35,6 +36,7 @@ usr/lib/mysql/plugin/component_test_sys_var_service_int.so
 usr/lib/mysql/plugin/component_test_sys_var_service_same.so
 usr/lib/mysql/plugin/component_test_sys_var_service_str.so
 usr/lib/mysql/plugin/component_test_system_variable_source.so
+usr/lib/mysql/plugin/component_test_table_access.so
 usr/lib/mysql/plugin/component_test_udf_registration.so
 usr/lib/mysql/plugin/component_test_udf_services.so
 usr/lib/mysql/plugin/component_udf_reg_3_func.so

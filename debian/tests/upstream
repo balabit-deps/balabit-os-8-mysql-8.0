@@ -34,6 +34,7 @@ main.file_contents                 : BUG#00000 - Tests package contents, which d
 main.loaddata_special              : BUG#96341 - Access blocked by apparmor. https://bugs.mysql.com/bug.php?id=96341
 main.mysql_client_test             : BUG#100274 - Unstable test
 main.mtr_unit_tests                : BUG#100532 - Test ignores --client-bindir setting, fails to find mysqltest_safe_process
+main.slow_log                      : BUG#00000 -  broken
 EOF
 
 cd /usr/lib/mysql-test

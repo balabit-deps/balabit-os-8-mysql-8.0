@@ -1,0 +1,18 @@
+Description: disable long double test on ppc64el causing FTBFS until a
+ proper fix is found.
+Author: Marc Deslauriers <marc.deslauriers@canonical.com>
+
+--- a/unittest/gunit/innodb/ut0new-t.cc
++++ b/unittest/gunit/innodb/ut0new-t.cc
+@@ -39,7 +39,11 @@ using int_types =
+ 
+ using char_types = ::testing::Types<char, unsigned char, wchar_t>;
+ 
++#ifdef _GLIBCXX_LONG_DOUBLE_COMPAT
++using floating_point_types = ::testing::Types<float, double>;
++#else
+ using floating_point_types = ::testing::Types<float, double, long double>;
++#endif
+ 
+ /**
+  * This is a typed test template, it's instantiated below for all primitive

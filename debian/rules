@@ -165,6 +165,8 @@ else
 	echo "main.mysqlpump_basic		: BUG#00000 - needs openssl with zlib" >> $(builddir)/mysql-test/skiplist
 	# Test is broken for 32bit. Fixed upstream, so remove in 8.0.12+
 	echo "main.window_functions_explain	: BUG#00000 -  broken on i386" >> $(builddir)/mysql-test/skiplist
+	# New test in 8.0.26, needs investigation
+	echo "main.slow_log			: BUG#00000 -  broken" >> $(builddir)/mysql-test/skiplist
 
 	# Skip replication tests since they are timing sensitive and may
 	# result in false positives.

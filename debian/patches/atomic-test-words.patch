@@ -1,8 +1,6 @@
-Index: mysql-8.0-8.0.19/CMakeLists.txt
-===================================================================
---- mysql-8.0-8.0.19.orig/CMakeLists.txt
-+++ mysql-8.0-8.0.19/CMakeLists.txt
-@@ -826,6 +826,20 @@ IF(LINUX_FEDORA_28 OR LINUX_UBUNTU_16_04
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1115,6 +1115,20 @@ IF(LINUX_FEDORA_28 OR LINUX_FEDORA_34 OR
    ENDIF()
  ENDIF()
  
