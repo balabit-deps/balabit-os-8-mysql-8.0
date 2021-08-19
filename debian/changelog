@@ -1,3 +1,12 @@
+mysql-8.0 (8.0.26-0ubuntu0.20.04.3) focal; urgency=medium
+
+  * d/systemd: Disable service timeout
+    For large databases, the service could timeout on stop, possibly
+    leading to data corruption during a system shutdown.
+    (LP: #1882527)
+
+ -- Paride Legovini <paride@ubuntu.com>  Thu, 19 Aug 2021 15:32:33 +0200
+
 mysql-8.0 (8.0.26-0ubuntu0.20.04.2) focal-security; urgency=medium
 
   * SECURITY UPDATE: Update to 8.0.26 to fix security issues
