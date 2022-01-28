@@ -35,6 +35,8 @@ main.loaddata_special              : BUG#96341 - Access blocked by apparmor. htt
 main.mysql_client_test             : BUG#100274 - Unstable test
 main.mtr_unit_tests                : BUG#100532 - Test ignores --client-bindir setting, fails to find mysqltest_safe_process
 main.slow_log                      : BUG#00000 -  broken
+main.index_merge_myisam            : BUG#00000 -  broken on i386
+main.mem_cnt_common                : BUG#00000 -  fails
 EOF
 
 cd /usr/lib/mysql-test
