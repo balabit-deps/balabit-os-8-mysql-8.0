@@ -40,18 +40,21 @@ start_server() {
 # Usage: stop_server <tmpdir>
 # Params:
 # tmpdir - Location of temporary pid-file
+# Returns:
+# 0 - Shutdown successful
+# 1 - Shutdown took longer than 3 minutes
 stop_server(){
   local tmpdir=$1
   # Send kill signal
   server_pid=$(cat "$tmpdir/mysqld.pid")
   kill "$server_pid"
 
-  for i in $(seq 1 60); do
+  for i in $(seq 1 180); do
     sleep 0.1 # A full second is too long, but we need to give the server _some_ time.
     if ! $(ps $server_pid >/dev/null 2>&1); then
       return 0
     fi
-    sleep 1
+    sleep 0.9
   done
   # The server hasn't shut down in a timely manner
   echo "Error: Unable to shut down server with process id $server_pid" >&2
@@ -190,9 +193,9 @@ case "$1" in
     # variants in Ubuntu.
     /usr/share/mysql-common/configure-symlinks install mysql "$mysql_cfgdir/mysql.cnf"
 
-    # Ensure the existence and right permissions for the database and
-    # log files.
-    for d in $mysql_statedir $mysql_filesdir $mysql_keyringdir $mysql_logdir
+    # Ensure the existence and right permissions for the database, socket
+    # folder, and log files.
+    for d in $mysql_statedir $mysql_filesdir $mysql_keyringdir $mysql_logdir $mysql_rundir
     do
       if [ ! -d "$d" -a ! -L "$d" ]; then mkdir "$d"; fi
       chown -R mysql:mysql $d

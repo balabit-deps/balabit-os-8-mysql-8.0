@@ -38,6 +38,13 @@ ifeq (,$(NUMJOBS))
 	NUMJOBS=1
 endif
 
+# Disable parallel builds on arm64
+PARALLEL_BUILDS = --parallel
+ifneq (,$(filter $(DEB_HOST_ARCH),arm64))
+	PARALLEL_BUILDS = --no-parallel
+	NUMJOBS=1
+endif
+
 # In Ubuntu RapidJSON is in the universe repo, so we instead use the bundled headers
 ifeq ($(shell dpkg-vendor --derives-from Ubuntu && echo yes),yes)
 	RAPIDJSONVAR = "bundled"
@@ -174,7 +181,7 @@ else
 
 	# Skip replication tests since they are timing sensitive and may
 	# result in false positives.
-	cd $(builddir)/mysql-test && ./mtr --report-unstable-tests --parallel=$(TESTJOBS) --skip-rpl $(MTR_SUITE) --force --skip-test-list=./skiplist || $(TESTSUITE_FAIL_CMD) ;
+	cd $(builddir)/mysql-test && ./mtr --suite-timeout=600 --testcase-timeout=60 --report-unstable-tests --parallel=$(TESTJOBS) --skip-rpl $(MTR_SUITE) --force --skip-test-list=./skiplist || $(TESTSUITE_FAIL_CMD) ;
 endif
 
 override_dh_auto_install: auto_install-stamp
@@ -240,5 +247,5 @@ get-orig-source:
 	uscan --force-download --verbose
 
 %:
-	dh $@ --parallel --with systemd
+	dh $@  $(PARALLEL_BUILDS) --with systemd
 

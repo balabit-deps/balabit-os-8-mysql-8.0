@@ -23,6 +23,7 @@ usr/lib/mysql/plugin/component_test_mysql_runtime_error.so
 usr/lib/mysql/plugin/component_test_mysql_system_variable_set.so
 usr/lib/mysql/plugin/component_test_pfs_notification.so
 usr/lib/mysql/plugin/component_test_pfs_resource_group.so
+usr/lib/mysql/plugin/component_test_sensitive_system_variables.so
 usr/lib/mysql/plugin/component_test_status_var_service.so
 usr/lib/mysql/plugin/component_test_status_var_service_int.so
 usr/lib/mysql/plugin/component_test_status_var_service_reg_only.so
