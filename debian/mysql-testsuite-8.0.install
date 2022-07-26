@@ -49,6 +49,7 @@ usr/lib/mysql/plugin/component_udf_reg_real_func.so
 usr/lib/mysql/plugin/component_udf_unreg_3_func.so
 usr/lib/mysql/plugin/component_udf_unreg_int_func.so
 usr/lib/mysql/plugin/component_udf_unreg_real_func.so
+usr/lib/mysql/plugin/conflicting_variables.so
 usr/lib/mysql/plugin/daemon_example.ini
 usr/lib/mysql/plugin/ha_example.so
 usr/lib/mysql/plugin/ha_mock.so

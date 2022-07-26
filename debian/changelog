@@ -1,3 +1,18 @@
+mysql-8.0 (8.0.30-0ubuntu0.20.04.2) focal-security; urgency=medium
+
+  * SECURITY UPDATE: Update to 8.0.30 to fix security issues
+    - debian/patches/fix_path_mysql_keyring_encryption_test.patch:
+      refreshed.
+    - debian/mysql-testsuite-8.0.install: added conflicting_variables.so.
+    - debian/rules: use bundled zlib as it is required now.
+    - CVE-2022-21509, CVE-2022-21515, CVE-2022-21517, CVE-2022-21522,
+      CVE-2022-21525, CVE-2022-21526, CVE-2022-21527, CVE-2022-21528,
+      CVE-2022-21529, CVE-2022-21530, CVE-2022-21531, CVE-2022-21534,
+      CVE-2022-21537, CVE-2022-21538, CVE-2022-21539, CVE-2022-21547,
+      CVE-2022-21553, CVE-2022-21569
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 26 Jul 2022 12:14:25 -0400
+
 mysql-8.0 (8.0.29-0ubuntu0.20.04.3) focal-security; urgency=medium
 
   * SECURITY REGRESSION: 8.0.29 breaks existing charm configurations
