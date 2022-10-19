@@ -1,3 +1,19 @@
+mysql-8.0 (8.0.31-0ubuntu0.20.04.1) focal-security; urgency=medium
+
+  * SECURITY UPDATE: Update to 8.0.31 to fix security issues (LP: #1992453)
+    - debian/tests/upstream: disable main.derived_limit test that fails on
+      s390x.
+    - Remove d/p/fix_path_mysql_keyring_encryption_test.patch: Fixed
+      upstream.
+    - Remove d/p/lp1971565.patch: Fixed upstream.
+    - debian/mysql-testsuite-8.0.install: added new files.
+    - CVE-2022-21594, CVE-2022-21599, CVE-2022-21604, CVE-2022-21608,
+      CVE-2022-21611, CVE-2022-21617, CVE-2022-21625, CVE-2022-21632,
+      CVE-2022-21633, CVE-2022-21637, CVE-2022-21640, CVE-2022-39400,
+      CVE-2022-39408, CVE-2022-39410
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 19 Oct 2022 07:35:39 -0400
+
 mysql-8.0 (8.0.30-0ubuntu0.20.04.2) focal-security; urgency=medium
 
   * SECURITY UPDATE: Update to 8.0.30 to fix security issues
