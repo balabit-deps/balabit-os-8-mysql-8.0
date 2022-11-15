@@ -1,3 +1,10 @@
+mysql-8.0 (8.0.31-0ubuntu0.20.04.2) focal; urgency=medium
+
+  * d/mysql-server-8.0.postinst: Confirm mysqld shuts down with stop_server
+    after initialization to avoid overlapping use of port 3306 (LP: #1921378)
+
+ -- Lena Voytek <lena.voytek@canonical.com>  Tue, 15 Nov 2022 13:42:17 -0700
+
 mysql-8.0 (8.0.31-0ubuntu0.20.04.1) focal-security; urgency=medium
 
   * SECURITY UPDATE: Update to 8.0.31 to fix security issues (LP: #1992453)

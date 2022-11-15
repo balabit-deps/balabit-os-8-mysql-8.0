@@ -45,8 +45,14 @@ start_server() {
 # 1 - Shutdown took longer than 3 minutes
 stop_server(){
   local tmpdir=$1
+
+  # Check if pid file still exists before attempting to get the pid
+  local server_pid=$(cat "$tmpdir/mysqld.pid" 2>/dev/null || true)
+  if [ "$server_pid" = "" ]; then
+    return 0
+  fi
+
   # Send kill signal
-  server_pid=$(cat "$tmpdir/mysqld.pid")
   kill "$server_pid"
 
   for i in $(seq 1 180); do
@@ -67,6 +73,8 @@ run_init_sql() {
   chown mysql:mysql "$tmpdir"
   mysqld --user=mysql --init-file="$1" --socket="$tmpdir/mysqld.sock" --pid-file="$tmpdir/mysqld.pid" > /dev/null 2>&1
   result=$?
+  # Enforce server shutdown, waiting for it to complete so there are no conflicts over port 3306
+  stop_server "$tmpdir"
   rm -rf "$tmpdir"
   return $result
 }
