@@ -17,8 +17,8 @@ usr/lib/mysql-router/libmysqlrouter_io_component.so.1
 usr/lib/mysql-router/libmysqlrouter_metadata_cache.so.1
 usr/lib/mysql-router/libmysqlrouter_mysqlxmessages.so.1
 usr/lib/mysql-router/libmysqlrouter_routing.so.1
-usr/lib/mysqlrouter/plugin/connection_pool.so
 usr/lib/mysql-router/libprotobuf-lite.so*
+usr/lib/mysqlrouter/plugin/connection_pool.so
 usr/lib/mysqlrouter/plugin/http_auth_backend.so
 usr/lib/mysqlrouter/plugin/http_auth_realm.so
 usr/lib/mysqlrouter/plugin/http_server.so
