@@ -9,3 +9,4 @@ disable_timestamping_test.patch
 mysql_secure_installation-remove-root-pw-creation.patch
 suppress_armhf_test_warning.patch
 disable_64bits_time_armhf.patch
+disable_test_riscv64_ftbfs.patch

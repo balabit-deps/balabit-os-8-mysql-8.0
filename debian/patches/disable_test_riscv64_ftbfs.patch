@@ -1,0 +1,20 @@
+Description: disable a test that FTBFS on riscv64
+Author: Marc Deslauriers <marc.deslauriers@canonical.com>
+Forwarded: no, doesn't affect newer releases
+
+This test was failing to build on riscv64, resulting in the following error
+even though it was using -latomic:
+
+/usr/bin/ld: ../../../../library_output_directory/libprotobuf-lite.so.24.4.0: undefined reference to `__atomic_exchange_1'
+/usr/bin/ld: ../../../../library_output_directory/libprotobuf-lite.so.24.4.0: undefined reference to `__atomic_compare_exchange_1'
+
+--- a/router/src/routing/tests/CMakeLists.txt
++++ b/router/src/routing/tests/CMakeLists.txt
+@@ -41,7 +41,6 @@ SET(test_files
+   # test_connection.cc
+   test_connection_container.cc
+   test_first_available.cc
+-  test_metadata_cache_group.cc
+   test_next_available.cc
+   test_round_robin.cc
+   test_routing.cc
